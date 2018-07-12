@@ -149,9 +149,7 @@
   "scripts": {
     "start": "reaction run",
     "test": "jest",
-    "docs": "jsdoc . --configure .reaction/jsdoc/jsdoc.json --readme .reaction/jsdoc/templates/static/README.md",
-    "preinstall": "curl https://install.meteor.com/ | sh",
-    "postinstall": "meteor npm install"
+    "docs": "jsdoc . --configure .reaction/jsdoc/jsdoc.json --readme .reaction/jsdoc/templates/static/README.md"
   },
   "babel": {
     "plugins": [
