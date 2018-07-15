@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700');
+
+div#brand {
+  width: 100%;
+  max-width: 130px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  margin-top: 30px;
+}
+
+@default-font: 'PT Sans Narrow';
+@extra-small-device: ~'only screen and (max-width: 480px)';
+@small-device: ~'only screen and (min-width: 480px) and (max-width: 599px)';
+@medium-device: ~'only screen and (min-width: 600px) and (max-width: 979px)';
+@large-device: ~'only screen and (min-width: 978px) and (max-width: 1200px)';
+@nav-bar-color: #F8C291;
+@primary-color: #335B72;
+@white-color: #FFF;
+@base-color: #F2F2F2;
+@highlight-color: rgba(0, 0, 0, 0.3);
+@border-color: #E6E6E6;
+
+.carousel-img {
+    width: 100%;
+    max-height: 500px;
+}
+
+.chevron {
+    position: absolute;
+    top: 40%;
+    // opacity: 0.6;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+#myCarousel {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#myCarousel .left {
+    display: block;
+    width: 40px;
+    height: 40px;
+    left: 10%
+}
+
+#myCarousel .right {
+    display: block;
+    width: 40px;
+    height: 40px;
+    right: 10%
+}
+
+.carousel-caption {
+    bottom: 180px;
+    font-family: @default-font;
+    background-color: rgba(0,0,0,0.1);
+    h1 {      
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 22px;
+        text-shadow: 0px 0px 1px #000;
+    }
+    @media  @extra-small-device {
+        bottom: 30px;
+        h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+    }
+    @media  @small-device {
+        bottom: 80px;
+        h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+    }
+    @media  @medium-device {
+        bottom: 150px;
+    }
+
+    .gadgets {
+        background-color: rgba(0,0,0,0.2);
+    }
+}
+
+.special-text {
+    color:#DA317D;
+}
+
+.carousel-inner {
+    @media @extra-small-device {
+        height: 230px;
+    }
+    @media @small-device {
+        height: 280px;
+    }
+    @media @medium-device {
+        height: 360px;
+    }
+    @media @large-device {
+        height: 500px;
+    }
+}
