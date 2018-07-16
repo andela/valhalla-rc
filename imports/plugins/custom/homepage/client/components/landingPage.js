@@ -9,8 +9,10 @@ class LandingPage extends getRawComponent("Products") {
     return (
       <div>
         <main>
-          <Carousel />
-          <AllProducts />
+          <div className="product-div">
+            <Carousel />
+            <AllProducts />
+          </div>
         </main>
       </div>
     );
