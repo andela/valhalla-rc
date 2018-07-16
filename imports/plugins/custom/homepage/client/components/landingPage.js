@@ -10,7 +10,6 @@ class LandingPage extends getRawComponent("Products") {
       <div>
         <main>
           <Carousel />
-          <hr className="divider"/>
           {/* <AllProducts /> */}
         </main>
       </div>
