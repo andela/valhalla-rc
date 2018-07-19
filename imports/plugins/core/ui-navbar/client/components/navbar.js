@@ -136,8 +136,8 @@ class NavBar extends Component {
     return (
       <div className="rui navbar">
         {this.renderHamburgerButton()}
-        {this.renderBrand()}
         {this.renderTagNav()}
+        {this.renderBrand()}
         {this.renderSearchButton()}
         {this.renderNotificationIcon()}
         {this.renderLanguage()}

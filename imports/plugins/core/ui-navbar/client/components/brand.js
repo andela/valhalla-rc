@@ -20,14 +20,11 @@ class Brand extends Component {
 
   render() {
     return (
-      <a className="brand" onClick={this.handleClick}>
-        {this.props.logo &&
-          <div className="logo">
-            <img src={this.props.logo} />
-          </div>
-        }
-        <span className="title">{this.props.title}</span>
-      </a>
+      <div id="brand">
+        <a className="brand" onClick={this.handleClick}>
+          <img src="/resources/images/applogo.jpg" width="130" height="55px" />
+        </a>
+      </div>
     );
   }
 }

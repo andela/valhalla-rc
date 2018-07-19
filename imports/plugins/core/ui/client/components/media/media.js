@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import ReactImageMagnify from "react-image-magnify";
 import { SortableItem } from "../../containers";
 import { Components, registerComponent } from "@reactioncommerce/reaction-components";
 
@@ -88,6 +89,26 @@ class MediaItem extends Component {
   }
 
   renderImage() {
+    if (this.props.zoomable && !this.props.editable) {
+      return (
+        <ReactImageMagnify {...{
+          smallImage: {
+            alt: "image",
+            isFluidWidth: true,
+            src: this.source
+          },
+          largeImage: {
+            src: this.source,
+            width: this.props.mediaWidth * 2,
+            height: this.props.mediaHeight * 2
+          },
+          isHintEnabled: true,
+          enlargedImagePosition: "over"
+        }}
+        />
+      );
+    }
+
     const image = (
       <img
         alt=""
@@ -137,7 +158,8 @@ MediaItem.propTypes = {
   onMouseLeave: PropTypes.func,
   onRemoveMedia: PropTypes.func,
   revision: PropTypes.object,
-  source: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+  source: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  zoomable: PropTypes.bool
 };
 
 registerComponent("MediaItem", MediaItem, SortableItem("media"));

@@ -6,7 +6,7 @@ import Blaze from "meteor/gadicc:blaze-react-component";
 import { Template } from "meteor/templating";
 
 const CoreLayout = ({ actionViewIsOpen, structure }) => {
-  const { layoutFooter, template } = structure || {};
+  const { template } = structure || {};
 
   const pageClassName = classnames({
     "page": true,
@@ -23,10 +23,6 @@ const CoreLayout = ({ actionViewIsOpen, structure }) => {
         <main>
           <Blaze template={template} />
         </main>
-      }
-
-      { Template[layoutFooter] &&
-        <Blaze template={layoutFooter} className="reaction-navigation-footer footer-default" />
       }
     </div>
   );
