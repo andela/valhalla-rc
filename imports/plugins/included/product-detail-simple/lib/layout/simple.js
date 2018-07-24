@@ -26,24 +26,8 @@ export default function blocks() {
               placeholder: "Title"
             }
           }
-        },
-
-        // PageTitle
-        {
-          component: "ProductField",
-          permissions: ["admin"],
-          audience: ["guest", "anonymous"],
-          props: {
-            // editable: this.editable,
-            fieldName: "pageTitle",
-            fieldTitle: "SubTitle",
-            element: "h2",
-            textFieldProps: {
-              i18nKeyPlaceholder: "productDetailEdit.pageTitle",
-              placeholder: "Subtitle"
-            }
-          }
         }
+
       ]
     },
 

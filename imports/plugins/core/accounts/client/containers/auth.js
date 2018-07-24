@@ -7,6 +7,7 @@ import { Accounts } from "meteor/accounts-base";
 import { Router } from "/client/api";
 import { ServiceConfigHelper, LoginFormSharedHelpers } from "../helpers";
 import { LoginFormValidation } from "/lib/api";
+import extractName from "/imports/plugins/custom/helper";
 
 class AuthContainer extends Component {
   static propTypes = {
@@ -74,7 +75,14 @@ class AuthContainer extends Component {
             }
           });
         } else {
+          const name =  extractName(username);
           Router.go(this.props.currentRoute.route.path);
+          // alert for successfully signin
+          Alerts.alert({
+            title: `Hi ${name}, Welcome back to AfriStore`,
+            type: "success",
+            imageHeight: 150
+          });
         }
       });
     } else if (this.props.currentView === "loginFormSignUpView") {
@@ -92,7 +100,14 @@ class AuthContainer extends Component {
             }
           });
         } else {
+          const name =  extractName(username);
           Router.go(this.props.currentRoute.route.path);
+          Alerts.alert({
+            title: `Hi ${name}, Welcome to AfriStore`,
+            type: "success",
+            imageHeight: 150
+          });
+          // alert for successfully registered
         }
       });
     }
