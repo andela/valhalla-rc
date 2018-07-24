@@ -23,15 +23,8 @@
       "required": true
     }
   },
-  "formation": {
-    "web": {
-      "quantity": 1
-    }
-  },
-  "addons": [
-    "mongolab",
-    "papertrail"
-  ],
+  "formation": {}
+  "addons": [],
   "buildpacks": [
     {
       "url": "https://github.com/swrdfish/meteor-buildpack-horse.git"
