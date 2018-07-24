@@ -5,6 +5,7 @@ import { Reaction } from "/client/api";
 import { i18next } from  "/client/api";
 import * as Collections from "/lib/collections";
 import { Components } from "@reactioncommerce/reaction-components";
+import extractName from "/imports/plugins/custom/helper";
 
 /**
  * @method isOwnerOfProfile
@@ -155,6 +156,8 @@ Template.accountProfile.helpers({
           return account.username;
         } else if (account.profile && account.profile.name) {
           return account.profile.name;
+        } else if (account.emails[0]) {
+          return extractName(account.emails[0].address);
         }
       }
     }

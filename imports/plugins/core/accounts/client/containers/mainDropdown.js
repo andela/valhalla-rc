@@ -9,6 +9,7 @@ import { i18nextDep, i18next } from  "/client/api";
 import { Tags } from "/lib/collections";
 import MainDropdown from "../components/mainDropdown";
 import { getUserAvatar } from "/imports/plugins/core/accounts/client/helpers/helpers";
+import extractName from "/imports/plugins/custom/helper";
 
 function displayName(displayUser) {
   i18nextDep.depend();
@@ -22,6 +23,8 @@ function displayName(displayUser) {
       return user.username;
     } else if (user.profile && user.profile.name) {
       return user.profile.name;
+    } else if (user.emails[0]) {
+      return extractName(user.emails[0].address);
     }
 
     // todo: previous check was user.services !== "anonymous", "resume". Is this
@@ -79,7 +82,7 @@ function handleChange(event, value) {
     return Reaction.showActionView(value);
   } else if (value.route || value.name) {
     const route = value.name || value.route;
-    return Reaction.Router.go(route);
+    return Reaction.Router.go(`/${route}`);
   }
 }
 
