@@ -1,7 +1,46 @@
-[{
-  "slug": "example-product",
-  "name": "example-product",
-  "isTopLevel": false,
+[
+  {
+    "slug": "bags",
+    "name": "Bags",
+    "isTopLevel": true,
+    "updatedAt": {
+      "$date": "2014-04-09T13:23:57.412-0700"
+    },
+    "createdAt": {
+      "$date": "2014-04-09T13:23:57.412-0700"
+    },
+    "_id": "jbaCvTBGjhBi2xdro",
+    "shopId": "J8Bhq3uTtdgwZx3rz"
+  },{
+    "slug": "clothing",
+    "name": "Clothing",
+    "isTopLevel": true,
+    "updatedAt": {
+      "$date": "2014-04-09T13:23:57.412-0700"
+    },
+    "createdAt": {
+      "$date": "2014-04-09T13:23:57.412-0700"
+    },
+    "_id": "rpjCvTBGjhBi2xdro",
+    "shopId": "J8Bhq3uTtdgwZx3rz"
+  },
+  {
+    "slug": "foot-wears",
+    "name": "Footwears",
+    "isTopLevel": true,
+    "updatedAt": {
+      "$date": "2014-04-09T13:23:57.412-0700"
+    },
+    "createdAt": {
+      "$date": "2014-04-09T13:23:57.412-0700"
+    },
+    "_id": "spqCvTBGjhBi2xdro",
+    "shopId": "J8Bhq3uTtdgwZx3rz"
+  },
+  {
+  "slug": "head-gears",
+  "name": "Head gears",
+  "isTopLevel": true,
   "updatedAt": {
     "$date": "2014-04-12T08:17:20.576-0700"
   },
@@ -10,9 +49,10 @@
   },
   "_id": "cseCBSSrJ3t8HQSNP",
   "shopId": "J8Bhq3uTtdgwZx3rz"
-}, {
-  "slug": "shop",
-  "name": "Shop",
+},
+{
+  "slug": "jewelries",
+  "name": "Jewelries",
   "isTopLevel": true,
   "updatedAt": {
     "$date": "2014-04-09T13:23:57.412-0700"
@@ -20,6 +60,20 @@
   "createdAt": {
     "$date": "2014-04-09T13:23:57.412-0700"
   },
-  "_id": "rpjCvTBGjhBi2xdro",
+  "_id": "jewCvTBGjhBi2xdro",
   "shopId": "J8Bhq3uTtdgwZx3rz"
-}]
+},
+{
+  "slug": "skin-care",
+  "name": "Skin care",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "_id": "skcCvTBGjhBi2xdro",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+}
+]

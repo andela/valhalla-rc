@@ -6,6 +6,7 @@ class VendorList extends getRawComponent("Products") {
   render() {
     return (
       <div>
+        <Components.RenderCategory />
         <div className="store-header">
           <br />
           <h1 className="text-white vend-header">Shop Africa</h1>

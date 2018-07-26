@@ -47,7 +47,7 @@ class TopProducts extends Component {
                         &#x24; {oneProduct.product.price.range}
                       </p>
                       <button className="btn">
-                        Add to cart <i className="fa fa-shopping-cart" />
+                        Add to cart <i className="fa fa-cart-arrow-down" />
                       </button>
                     </div>
                   </a>

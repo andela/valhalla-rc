@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Components } from "@reactioncommerce/reaction-components";
 import { Reaction } from "/client/api";
 import { getTagIds as getIds } from "/lib/selectors/tags";
+import RenderCategory from "../../../custom/homepage/client/components/RenderCategory";
 
 /** Class representing the Products React component
  * @summary PropTypes for Product React component
@@ -110,12 +111,28 @@ class Products extends Component {
    */
   renderNotFound() {
     return (
-      <Components.NotFound
-        i18nKeyTitle="productGrid.noProductsFound"
-        icon="fa fa-barcode"
-        title="No Products Found"
-      />
+      <div>
+        <RenderCategory />
+        <Components.NotFound
+          i18nKeyTitle="productGrid.noProductsFound"
+          icon="fa fa-barcode"
+          title="No Products Found here"
+        />
+      </div>
     );
+  }
+  /**
+   * Render the not found component
+   * @access protected
+   * @return {Node} show product category.
+   */
+  getCategory() {
+    const { pathname } = window.location;
+    if (pathname === "/tag") {
+      return "All product";
+    }
+
+    return pathname.split("tag/")[1];
   }
 
   /**
@@ -126,15 +143,24 @@ class Products extends Component {
   render() {
     // Force show the not-found view.
     if (this.props.showNotFound) {
-      return this.renderNotFound();
+      return (
+        <div className="product-div">
+          <RenderCategory />
+          {this.renderNotFound()}
+        </div>
+      );
     } else if (this.props.ready()) {
       // Render products grid if products are available after subscription ready.
       if (this.hasProducts) {
         return (
-          <div id="container-main">
-            {this.renderProductGrid()}
-            {this.renderLoadMoreProductsButton()}
-            {this.renderSpinner()}
+          <div>
+            <RenderCategory />
+            <div id="container-main product-div">
+              <h2 className="subtitle fancy top-products product-category"><span>{ this.getCategory() }</span></h2>
+              {this.renderProductGrid()}
+              {this.renderLoadMoreProductsButton()}
+              {this.renderSpinner()}
+            </div>
           </div>
         );
       }

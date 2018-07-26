@@ -1,0 +1,168 @@
+[
+  {
+  "slug": "gele",
+  "name": "Gele Nigeria",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-12T08:17:20.576-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-12T08:17:20.576-0700"
+  },
+  "_id": "cseCBDDrl3t8HQSNP",
+  "_tagId": "cseCBSSrJ3t8HQSNP",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+}, {
+  "slug": "doek",
+  "name": "Doek SouthAfrica",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "_id": "csebSScrJ3t8HQSNP",
+  "_tagId": "rpjCvDtGjhBi2xdro",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+},
+  {
+  "slug": "Igitambara",
+  "name": "Igitambara Rwanda",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-12T08:17:20.576-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-12T08:17:20.576-0700"
+  },
+  "_id": "hhdCBSSrJ3t8HQSNP",
+  "_tagId": "cseCBSSrJ3t8HQSNP",
+  "shopId": "J8Bhq3stsdgwZx3rz"
+}, {
+  "slug": "dashiki",
+  "name": "Dashiki Ghana",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "_id": "rpjCvTBGjhBi2json",
+  "_tagId": "rpjCvTBGjhBi2xdro",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+},
+{
+  "slug": "kente",
+  "name": "Kente Ghana",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "_id": "rpjCvTBGjhBj6sson",
+  "_tagId": "rpjCvTBGjhBi2xdro",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+},
+{
+  "slug": "bone",
+  "name": "Bone",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "_id": "rpjCvTBGkjsj6sson",
+  "_tagId": "jewCvTBGjhBi2xdro",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+},
+{
+  "slug": "sandstone",
+  "name": "Sandstone",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "_id": "rpjCvTBGjhh32sson",
+  "_tagId": "jewCvTBGjhBi2xdro",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+},
+{
+  "slug": "african charm",
+  "name": "African Charm",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "_id": "vCjPrTBGjhh32sson",
+  "_tagId": "jbaCvTBGjhBi2xdro",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+},
+{
+  "slug": "Ashanti treasures",
+  "name": "Ashanti Treasures",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "_id": "rpjCvGGDjhh32sson",
+  "_tagId": "jbaCvTBGjhBi2xdro",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+},
+{
+  "slug": "Malée",
+  "name": "Malée",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "_id": "rpjCvGGDjhh32nnos",
+  "_tagId": "skcCvTBGjhBi2xdro",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+},
+{
+  "slug": "Oríkì",
+  "name": "Oríkì",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "_id": "rpjCvGGDjhh32jdsf",
+  "_tagId": "skcCvTBGjhBi2xdro",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+},
+{
+  "slug": "Africology",
+  "name": "Africology",
+  "isTopLevel": true,
+  "updatedAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "createdAt": {
+    "$date": "2014-04-09T13:23:57.412-0700"
+  },
+  "_id": "rpjCvGGDjhh32fsadf",
+  "_tagId": "skcCvTBGjhBi2xdro",
+  "shopId": "J8Bhq3uTtdgwZx3rz"
+}
+]

@@ -20,7 +20,7 @@ const CoreLayout = ({ actionViewIsOpen, structure }) => {
       <Blaze template="cartDrawer" className="reaction-cart-drawer" />
 
       { Template[template] &&
-        <main>
+        <main className="product-div">
           <Blaze template={template} />
         </main>
       }

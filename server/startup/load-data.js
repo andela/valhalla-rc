@@ -49,6 +49,12 @@ export default function () {
     } catch (error) {
       Logger.error(error, "Bypassing loading Tags default data.");
     }
+    try {
+      Logger.debug("Loading SubTags Data");
+      Fixture.process(Assets.getText("data/SubTags.json"), ["name"], Reaction.Import.subtag);
+    } catch (error) {
+      Logger.error(error, "Bypassing loading SubTags default data.");
+    }
     //
     // these will flush and import with the rest of the imports from core init.
     // but Bulk.find.upsert() = false

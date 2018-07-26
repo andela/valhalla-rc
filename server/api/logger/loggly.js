@@ -1,4 +1,4 @@
-import loggly from "node-loggly-bulk";
+import loggly from "node-loggly-bulk/lib/loggly";
 
 class Bunyan2Loggly {
   constructor(logglyConfig, bufferLength = 1, bufferTimeout, callback) {
