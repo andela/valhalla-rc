@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { registerComponent } from "/imports/plugins/core/components/lib";
+
 
 class Footer extends Component {
   /* eslint-disable */
@@ -34,15 +36,30 @@ class Footer extends Component {
                    that combines the flexibility
                   developers and designers want with the
                   stability and support businesses need.
-                  </p>
+                  </p><br />
+                  <img className="paystack" src="/resources/images/paystack.png" />
                 </div>
-                <div className="col-lg-3 col-md-3 footer-contact">
-                  <h4>Payment Method</h4>
-                  <br />
-                  <p>
-                    <img className="paystack" src="/resources/images/paystack.png" />
-                  </p>
-                </div>
+                <div className="col-lg-3 col-md-3 footer-links">
+              <h4>Useful Links</h4>
+              <ul class="a__link">
+                <li>
+                  <i className="ion-ios-arrow-right"></i>
+                  <a href="/vendors">Vendors on AfriStore</a>
+                </li>
+                <li>
+                  <i className="ion-ios-arrow-right"></i>
+                  <a href="#">T & C Policy</a>
+                </li>
+                <li>
+                  <i className="ion-ios-arrow-right"></i>
+                  <a href="#about-me">Shipping & Returns</a>
+                </li>
+                <li>
+                  <i className="ion-ios-arrow-right"></i>
+                  <a href="#portfolio">About</a>
+                </li>
+              </ul>
+            </div>
 
                 <div className="col-lg-3 col-md-3 footer-contact">
                   <h4>Contact Us</h4>
@@ -84,5 +101,6 @@ class Footer extends Component {
     );
   }
 }
+registerComponent("Footer", Footer);
 
 export default Footer;

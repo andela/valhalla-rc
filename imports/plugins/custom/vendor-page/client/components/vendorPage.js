@@ -1,5 +1,5 @@
 import React from "react";
-import { registerComponent, getHOCs, getRawComponent } from "/imports/plugins/core/components/lib";
+import { registerComponent, getHOCs, getRawComponent, Components } from "/imports/plugins/core/components/lib";
 import ListVendors from "./listVendors";
 
 class VendorList extends getRawComponent("Products") {
@@ -17,6 +17,7 @@ class VendorList extends getRawComponent("Products") {
         <div><br /><br />
           <ListVendors/>
         </div>
+        <Components.Footer />
       </div>
     );
   }
