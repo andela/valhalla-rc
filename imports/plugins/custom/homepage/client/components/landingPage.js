@@ -3,6 +3,8 @@ import { registerComponent, getHOCs, getRawComponent } from "/imports/plugins/co
 import Carousel from "./carousel";
 import AllProducts from "./products";
 import ProductCategory from "./productCategory";
+import InstagramFeeds from "../../../socialFeed/instagram/instagramFeeds";
+import Footer from "./footer";
 import "../styles/landing.less";
 import "../styles/category.less";
 
@@ -15,6 +17,8 @@ class LandingPage extends getRawComponent("Products") {
             <Carousel />
             <AllProducts />
             <ProductCategory />
+            <InstagramFeeds />
+            <Footer />
           </div>
         </main>
       </div>

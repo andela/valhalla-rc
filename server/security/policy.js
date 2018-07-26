@@ -52,3 +52,11 @@ BrowserPolicy.content.allowOriginForAll("fonts.gstatic.com");
 
 BrowserPolicy.content.allowOriginForAll("enginex.kadira.io");
 BrowserPolicy.content.allowOriginForAll("*.stripe.com");
+// twitter
+BrowserPolicy.content.allowOriginForAll("*.twitter.com");
+BrowserPolicy.content.allowOriginForAll("*.twimg.com");
+// instagram
+BrowserPolicy.content.allowOriginForAll("https://apps.elfsight.com");
+BrowserPolicy.content.allowOriginForAll("https://api.instacloud.io");
+
+
