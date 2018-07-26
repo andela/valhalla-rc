@@ -188,6 +188,10 @@ export default function twoColumn() {
               paddingTop: 20
             }
           }
+        },
+        // Reviews container
+        {
+          component: "ReviewsContainer"
         }
 
       ]
