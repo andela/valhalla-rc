@@ -119,6 +119,14 @@ class NavBar extends Component {
     );
   }
 
+  renderVendor() {
+    return (
+      <div className="">
+        <a href="/vendors">Vendors</a>
+      </div>
+    );
+  }
+
   renderTagNav() {
     return (
       <div className="menu">
@@ -139,6 +147,7 @@ class NavBar extends Component {
         {this.renderTagNav()}
         {this.renderBrand()}
         {this.renderSearchButton()}
+        {this.renderVendor()}
         {this.renderNotificationIcon()}
         {this.renderLanguage()}
         {this.renderCurrency()}
