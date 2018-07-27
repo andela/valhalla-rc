@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Truncate from "react-truncate";
 import {  registerComponent, composeWithTracker  } from "@reactioncommerce/reaction-components";
 import { Meteor } from "meteor/meteor";
 import PropTypes from "prop-types";
@@ -21,7 +22,7 @@ class TopProducts extends Component {
     if (!productStatus) {
       return null;
     }
-    return <h3 className="sold-out">Sold out!</h3>;
+    return <span className="sold_out">Sold out</span>;
   };
 
   render() {
@@ -30,32 +31,49 @@ class TopProducts extends Component {
     return (
       <div className="top-products container" id="top-products">
         <h2 className="subtitle fancy top-products"><span>TOP PRODUCTS</span></h2>
-        { this.props.allProducts &&
-          <div className="row row-eq-heightt product-group">
-            { this.props.allProducts.map(oneProduct => (
-              <div key={oneProduct.product._id} className="col-md-3 col-lg-4">
-                <div className="cont">
-                  { this.isSoldOut(oneProduct.product.isSoldOut) }
-                  <a href={`/product/${oneProduct.product.handle}/`}>
-                    <div className="product">
-                      <img className="prod-img" src={this.getImageUrl(oneProduct.image)} />
-                      <h2 className="header">{oneProduct.product.title}</h2>
-                      <p className="description">
-                        {oneProduct.product.description}
-                      </p>
-                      <p className="price">
-                        &#x24; {oneProduct.product.price.range}
-                      </p>
-                      <button className="btn">
-                        Add to cart <i className="fa fa-cart-arrow-down" />
-                      </button>
+        <div className="container page-wrapper product-div">
+          <div className="page-inner">
+            <div className="row">
+              { this.props.allProducts &&
+                <div className="row row-eq-heightt product-group">
+                  { this.props.allProducts.map(oneProduct => (
+                    <div key={oneProduct.product._id} className="col-md-3 col-lg-4">
+                      <div className="cont">
+                        {/* { this.isSoldOut(oneProduct.product.isSoldOut) } */}
+                        <a href={`/product/${oneProduct.product.handle}`} key={oneProduct.product._id}>
+                          <div className="col-lg-4 el-wrapper">
+                            { this.isSoldOut(oneProduct.product.isSoldOut) }
+                            <div className="box-up">
+                              <img className="img" src={this.getImageUrl(oneProduct.image)} alt="" />
+                              <div className="img-info">
+                                <div className="info-inner">
+                                  <span className="p-company lead hide">
+                                    <Truncate lines={4}>
+                                      {oneProduct.product.description}
+                                    </Truncate>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <h4 className="text-center">{oneProduct.product.title}</h4>
+                            <div className="box-down">
+                              <div className="h-bg">
+                                <div className="h-bg-inner" />
+                              </div>
+                              <span className="cart">
+                                <span className="price">${oneProduct.product.price.min}</span>
+                              </span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                  </a>
+                  ))}
                 </div>
-              </div>
-            ))}
+              }
+            </div>
           </div>
-        }
+        </div>
       </div>
     );
   }
