@@ -173,6 +173,11 @@ export default function blocks() {
               paddingTop: 20
             }
           }
+        },
+
+        // Reviews container
+        {
+          component: "ReviewsContainer"
         }
 
       ]
