@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Components } from "@reactioncommerce/reaction-components";
 import { Reaction } from "/client/api";
 import { getTagIds as getIds } from "/lib/selectors/tags";
+import RenderCategory from "../../../custom/homepage/client/components/RenderCategory";
 
 /** Class representing the Products React component
  * @summary PropTypes for Product React component
@@ -117,6 +118,19 @@ class Products extends Component {
       />
     );
   }
+  /**
+   * Render the not found component
+   * @access protected
+   * @return {Node} show product category.
+   */
+  getCategory() {
+    const { pathname } = window.location;
+    if (pathname === "/tag") {
+      return "All product";
+    }
+
+    return pathname.split("tag/")[1];
+  }
 
   /**
    * Render component
@@ -126,13 +140,26 @@ class Products extends Component {
   render() {
     // Force show the not-found view.
     if (this.props.showNotFound) {
-      return this.renderNotFound();
+      return (
+        <div className="product-div">
+          <RenderCategory />
+          {this.renderNotFound()}
+        </div>
+      );
     } else if (this.props.ready()) {
       // Render products grid if products are available after subscription ready.
       if (this.hasProducts) {
         return (
-          <div id="container-main">
-            {this.renderProductGrid()}
+          <div>
+            <RenderCategory />
+            <h2 className="subtitle fancy top-products product-category"><span>{ this.getCategory() }</span></h2>
+            <div className="container page-wrapper product-div">
+              <div className="page-inner">
+                <div className="row">
+                  {this.renderProductGrid()}
+                </div>
+              </div>
+            </div>
             {this.renderLoadMoreProductsButton()}
             {this.renderSpinner()}
           </div>

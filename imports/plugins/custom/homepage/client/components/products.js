@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Truncate from "react-truncate";
-import {  registerComponent, composeWithTracker  } from "@reactioncommerce/reaction-components";
+import { registerComponent, composeWithTracker } from "@reactioncommerce/reaction-components";
 import { Meteor } from "meteor/meteor";
 import PropTypes from "prop-types";
 import { Products, Media } from "/lib/collections";
@@ -41,7 +41,7 @@ class TopProducts extends Component {
                       <div className="cont">
                         {/* { this.isSoldOut(oneProduct.product.isSoldOut) } */}
                         <a href={`/product/${oneProduct.product.handle}`} key={oneProduct.product._id}>
-                          <div className="col-lg-4 el-wrapper">
+                          <div className="col-lg-4 el-wrapper product-column">
                             { this.isSoldOut(oneProduct.product.isSoldOut) }
                             <div className="box-up">
                               <img className="img" src={this.getImageUrl(oneProduct.image)} alt="" />

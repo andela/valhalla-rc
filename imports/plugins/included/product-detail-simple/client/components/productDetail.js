@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Components } from "@reactioncommerce/reaction-components";
 import { ReactionLayout } from "/imports/plugins/core/layout/lib";
+import RenderCategory from "../../../../custom/homepage/client/components/RenderCategory";
 
 class ProductDetail extends Component {
   get tags() {
@@ -19,6 +20,7 @@ class ProductDetail extends Component {
   render() {
     return (
       <div className="pdp" style={{ position: "relative" }}>
+        <RenderCategory />
         <div className="container-main pdp-container" itemScope itemType="http://schema.org/Product">
           <div className="row">
             <Components.Alerts placement="productManagement" />

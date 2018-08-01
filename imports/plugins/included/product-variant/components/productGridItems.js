@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Truncate from "react-truncate";
 import { Components } from "@reactioncommerce/reaction-components";
 import { formatPriceString } from "/client/api";
 
@@ -61,6 +62,20 @@ class ProductGridItems extends Component {
     );
   }
 
+  isSoldOut(productStatus) {
+    if (!productStatus) {
+      return null;
+    }
+    return <span className="sold_out">Sold out</span>;
+  }
+
+  renderProductMedia() {
+    if (this.props.media() === false) {
+      return "/resources/placeholder.gif";
+    }
+    return this.props.media().url({ store: "large" });
+  }
+
   renderAdditionalMedia() {
     if (this.props.additionalMedia() !== false) {
       if (this.props.isMediumWeight()) {
@@ -116,34 +131,32 @@ class ProductGridItems extends Component {
 
   render() {
     const productItem = (
-      <li
-        className={`product-grid-item ${this.renderPinned()} ${this.props.weightClass()} ${this.props.isSelected()}`}
-        data-id={this.props.product._id}
-        id={this.props.product._id}
-      >
-        <div className={this.renderHoverClassName()}>
-          <span className="product-grid-item-alerts" />
-
-          <a className="product-grid-item-images"
-            href={this.props.pdpPath()}
-            data-event-category="grid"
-            data-event-label="grid product click"
-            data-event-value={this.props.product._id}
-            onDoubleClick={this.handleDoubleClick}
-            onClick={this.handleClick}
-          >
-            <div className={`product-primary-images ${this.renderVisible()}`}>
-              {this.renderMedia()}
-              {this.renderOverlay()}
+      <a href={`/product/${this.props.product.handle}`} key={this.props.product._id}>
+        <div className="col-lg-4 el-wrapper product-categories product-column">
+          { this.isSoldOut(this.props.product.isSoldOut) }
+          <div className="box-up">
+            <img className="img" src={this.renderProductMedia()} alt="" />
+            <div className="img-info">
+              <div className="info-inner">
+                <span className="p-company lead hide">
+                  <Truncate lines={4}>
+                    {this.props.product.description}
+                  </Truncate>
+                </span>
+              </div>
             </div>
-
-            {this.renderAdditionalMedia()}
-          </a>
-
-          {!this.props.isSearch && this.renderNotices()}
-          {this.renderGridContent()}
+          </div>
+          <h4 className="text-center">{this.props.product.title}</h4>
+          <div className="box-down">
+            <div className="h-bg">
+              <div className="h-bg-inner" />
+            </div>
+            <span className="cart">
+              <span className="price">${this.props.product.price.min}</span>
+            </span>
+          </div>
         </div>
-      </li>
+      </a>
     );
 
     if (this.props.canEdit) {

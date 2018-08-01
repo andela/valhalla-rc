@@ -31,14 +31,12 @@ class ProductGrid extends Component {
 
   render() {
     return (
-      <div className="container-main">
-        <div className="product-grid">
-          <Components.DragDropProvider>
-            <ul className="product-grid-list list-unstyled" id="product-grid-list">
-              {this.renderProductGridItems(this.props.products)}
-            </ul>
-          </Components.DragDropProvider>
-        </div>
+      <div className="product-grid">
+        <Components.DragDropProvider>
+          <ul className="product-grid-list list-unstyled" id="product-grid-list">
+            {this.renderProductGridItems(this.props.products)}
+          </ul>
+        </Components.DragDropProvider>
       </div>
     );
   }

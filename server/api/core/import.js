@@ -385,6 +385,18 @@ Import.shipping = function (key, shipping) {
 Import.tag = function (key, tag) {
   return this.object(Collections.Tags, key, tag);
 };
+/**
+ * @name tag
+ * @method
+ * @memberof Import
+ * @summary Store a tag in the import buffer.
+ * @param {Object} key A key to look up the tag
+ * @param {Object} tag The tag data to be updated
+ * @returns {Object} this tag
+ */
+Import.subtag = function (key, subtag) {
+  return this.object(Collections.SubTags, key, subtag);
+};
 
 /**
  * @name object
@@ -481,7 +493,9 @@ Import.indication("languages", Collections.Shops, 0.5);
 Import.indication("currencies", Collections.Shops, 0.5);
 Import.indication("timezone", Collections.Shops, 0.5);
 Import.indication("isTopLevel", Collections.Tags, 0.4);
+Import.indication("isTopLevel", Collections.SubTags, 0.4);
 Import.indication("slug", Collections.Tags, 0.5);
+Import.indication("slug", Collections.SubTags, 0.5);
 Import.indication("provider", Collections.Shipping, 0.2);
 
 //

@@ -113,6 +113,11 @@ class NavBar extends Component {
     );
   }
 
+  handleDropdown() {
+    const categories = document.getElementById("categories");
+    categories.classList.remove("hide");
+  }
+
   renderHamburgerButton() {
     return (
       <div className="showmenu"><Components.Button icon="bars" onClick={this.toggleNavbarVisibility} /></div>
@@ -129,13 +134,17 @@ class NavBar extends Component {
 
   renderTagNav() {
     return (
-      <div className="menu">
-        <Components.TagNav
+      <div className="menu" onMouseEnter={this.handleDropdown}>
+        {/* <Components.TagNav
           isVisible={this.state.navBarVisible}
           closeNavbar={this.handleCloseNavbar}
         >
           <Components.Brand />
-        </Components.TagNav>
+        </Components.TagNav> */}
+        {/* <RenderCategory /> */}
+        <span className="dropdown-toggle category-drop" data-toggle="collapse" data-target="#categories">
+          Categories&nbsp;<i className="fa fa-caret-down" />
+        </span>
       </div>
     );
   }

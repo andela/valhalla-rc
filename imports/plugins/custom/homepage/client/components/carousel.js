@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import RenderCategory from "./RenderCategory";
 
 class Carousel extends Component {
   render() {
@@ -6,6 +7,7 @@ class Carousel extends Component {
       <div className="row car">
         <div>
           <div id="myCarousel" className="carousel slide" data-ride="carousel">
+            <RenderCategory />
             <div className="carousel-inner">
 
               <div className="item active">
