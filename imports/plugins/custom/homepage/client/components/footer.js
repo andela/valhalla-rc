@@ -41,7 +41,7 @@ class Footer extends Component {
                 </div>
                 <div className="col-lg-3 col-md-3 footer-links">
               <h4>Useful Links</h4>
-              <ul class="a__link">
+              <ul className="a__link">
                 <li>
                   <i className="ion-ios-arrow-right"></i>
                   <a href="/vendors">Vendors on AfriStore</a>
@@ -67,22 +67,13 @@ class Footer extends Component {
                     <strong>Phone:</strong> +2347031229501<br />
                     <strong>Email:</strong> info@andela.com<br />
                   </p>
-                  <div className="social-links">
-                    <a href="#" className="twitter">
-                      <i className="fa fa-twitter" />
-                    </a>
-                    <a href="#" className="facebook">
-                      <i className="fa fa-facebook" />
-                    </a>
-                    <a href="#" className="instagram">
-                      <i className="fa fa-instagram" />
-                    </a>
-                  </div>
                 </div>
 
-                <div className="col-lg-3 col-md-3 footer-twitter-feed">
-                  {/* <!-- embed twitter media content --> */}
-                  <a className="twitter-timeline" href="https://twitter.com/Afristore1?ref_src=twsrc%5Etfw">Tweets by Afristore1</a>
+                <div className="col-lg-3 col-md-3 footer-contact">
+                  <h4>We're Social</h4>
+                  <a href="https://www.facebook.com/TheAfricanShop2013" target="_blank" className="zocial facebook"><i className="fa fa-facebook"></i> Like on Facebook &nbsp; &nbsp;</a><br /><br />
+                  <a href="#" target="_blank" className="zocial googleplus"><i className="fa fa-google-plus"></i> @afri_store &nbsp;</a><br /><br />
+                  <a href="https://twitter.com/PapstoreSA" target="_blank" className="zocial twitter"><i className="fa fa-twitter"></i>   @afri_store &nbsp;</a>
                 </div>
 
               </div>
