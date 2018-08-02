@@ -65,7 +65,7 @@ class Category extends Component {
           href="/tag"
           className="list-group-item"
         >
-          <i className="fa fa-angle-double-right pull-right" /> All product
+          <i className="fa fa-angle-double-right pull-right" /> All products
         </a>
         { this.props.allTags.map(category => this.mapCategory(category)) }
       </div>

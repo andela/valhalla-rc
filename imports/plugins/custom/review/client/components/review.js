@@ -117,7 +117,11 @@ class ReviewsContainer extends Component {
         </div>
         <div hidden={hideReviewForm}>
           {
-            !signedInUser ? <h3 className="text-center">Kindly signin to add a review</h3> : (
+            !signedInUser ? (
+              <div className="d-flex justify-content-center">
+                <h3 className="review-signin-error">Kindly sign-in to add a review</h3>
+              </div>
+            ) : (
               <form onSubmit={this.onSubmit}>
                 <div className="d-flex align-items-center mt-2">
                   <div className="m-0">
