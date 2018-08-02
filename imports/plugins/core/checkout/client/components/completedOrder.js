@@ -48,25 +48,28 @@ const CompletedOrder = ({ order, orderId, shops, orderSummary, paymentMethods, h
 
   return (
     <div className="container order-completed">
-      { headerText }
-      <div className="order-details-main">
-        <div className="order-details-content-title">
-          <p><Components.Translation defaultValue="Your Items" i18nKey={"cartCompleted.yourItems"} /></p>
+      <div className="col-md-8">
+        { headerText }
+        <div className="order-details-main">
+          <div className="order-details-content-title">
+            <p><Components.Translation defaultValue="Your Items" i18nKey={"cartCompleted.yourItems"} /></p>
+          </div>
+          {shops.map(function (shop) {
+            const shopKey = Object.keys(shop);
+            return (
+              <CompletedShopOrders
+                shopName={shop[shopKey].name}
+                items={shop[shopKey].items}
+                key={shopKey}
+                shippingMethod={shop[shopKey].shippingMethod}
+                handleDisplayMedia={handleDisplayMedia}
+                isProfilePage={isProfilePage}
+              />
+            );
+          })}
         </div>
-        {shops.map(function (shop) {
-          const shopKey = Object.keys(shop);
-          return (
-            <CompletedShopOrders
-              shopName={shop[shopKey].name}
-              items={shop[shopKey].items}
-              key={shopKey}
-              shippingMethod={shop[shopKey].shippingMethod}
-              handleDisplayMedia={handleDisplayMedia}
-              isProfilePage={isProfilePage}
-            />
-          );
-        })}
       </div>
+
 
       <div className="order-details-side">
 
