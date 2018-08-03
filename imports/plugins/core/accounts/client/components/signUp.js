@@ -21,11 +21,13 @@ class SignUp extends Component {
 
     this.state = {
       email: props.credentials.email,
-      password: props.credentials.password
+      password: props.credentials.password,
+      selectedOption: "customer"
     };
 
     this.handleFieldChange = this.handleFieldChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleRoleChange = this.handleRoleChange.bind(this);
   }
 
   handleFieldChange = (event, value, field) => {
@@ -34,9 +36,13 @@ class SignUp extends Component {
     });
   }
 
+  handleRoleChange = (event) => {
+    this.setState({ selectedOption: event.target.value });
+  };
+
   handleSubmit = (event) => {
     if (this.props.onFormSubmit) {
-      this.props.onFormSubmit(event, this.state.email, this.state.password);
+      this.props.onFormSubmit(event, this.state.email, this.state.password, this.state.selectedOption);
     }
   }
 
@@ -136,11 +142,34 @@ class SignUp extends Component {
             {this.renderPasswordErrors()}
           </div>
 
+          <div className="row">
+            <div className="col-sm-6">
+              <input
+                type="radio"
+                name="role"
+                value="customer"
+                onChange={this.handleRoleChange}
+                checked={this.state.selectedOption === "customer"}
+              />
+              <span className="radio-btn">Customer</span>
+            </div>
+            <div className="col-sm-6">
+              <input
+                type="radio"
+                name="role"
+                value="merchant"
+                onChange={this.handleRoleChange}
+                checked={this.state.selectedOption === "merchant"}
+              />
+              <span className="radio-btn">Vendor</span>
+            </div>
+          </div><br />
+
           <div className="form-group">
             {this.renderSpinnerOnWait()}
           </div>
 
-          <div className="form-group">
+          <div className="form-group hi">
             <a
               href="#"
               tabIndex="4"

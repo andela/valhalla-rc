@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import { Components, registerComponent, composeWithTracker } from "@reactioncommerce/reaction-components";
 import { Meteor } from "meteor/meteor";
 import { Accounts } from "meteor/accounts-base";
-import { Router } from "/client/api";
-import { ServiceConfigHelper, LoginFormSharedHelpers } from "../helpers";
+import { Router, i18next } from "/client/api";
 import { LoginFormValidation } from "/lib/api";
 import extractName from "/imports/plugins/custom/helper";
+import { ServiceConfigHelper, LoginFormSharedHelpers } from "../helpers";
 
 class AuthContainer extends Component {
   static propTypes = {
@@ -34,7 +34,7 @@ class AuthContainer extends Component {
     this.hasPasswordService = this.hasPasswordService.bind(this);
   }
 
-  handleFormSubmit = (event, email, password) => {
+  handleFormSubmit = (event, email, password, selectedOption) => {
     event.preventDefault();
 
     this.setState({
@@ -102,12 +102,31 @@ class AuthContainer extends Component {
         } else {
           const name =  extractName(username);
           Router.go(this.props.currentRoute.route.path);
-          Alerts.alert({
-            title: `Hi ${name}, Welcome to AfriStore`,
-            type: "success",
-            imageHeight: 150
-          });
-          // alert for successfully registered
+
+          // alert for successfully registered customer
+          if (selectedOption === "customer") {
+            Alerts.alert({
+              title: `Hi ${name}, Welcome to AfriStore!`,
+              type: "success",
+              imageHeight: 150
+            });
+          }
+
+          if (selectedOption === "merchant") {
+            Meteor.call("shop/createShop", Meteor.userId(), (err) => {
+              if (err) {
+                const errorMessage = i18next.t("marketplace.errorCannotCreateShop", { defaultValue: "Could not create shop for current user {{user}}" });
+                return Alerts.toast(`${errorMessage} ${err}`, "error");
+              }
+
+              // alert for successfully registered merchant
+              Alerts.alert({
+                title: `Hi ${name}, Welcome to AfriStore. Your shop is ready!`,
+                type: "success",
+                imageHeight: 150
+              });
+            });
+          }
         }
       });
     }
