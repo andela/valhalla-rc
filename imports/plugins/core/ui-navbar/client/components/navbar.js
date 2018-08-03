@@ -143,7 +143,7 @@ class NavBar extends Component {
         </Components.TagNav> */}
         {/* <RenderCategory /> */}
         <span className="dropdown-toggle category-drop" data-toggle="collapse" data-target="#categories">
-          Categories&nbsp;<i className="fa fa-caret-down" />
+          Product Categories&nbsp;<i className="fa fa-caret-down" />
         </span>
       </div>
     );
