@@ -23,6 +23,12 @@ Reaction.registerPackage({
       name: "VendorPage",
       template: "VendorPage",
       workflow: "coreWorkflow"
+    },
+    {
+      route: "/vendors/:vendorName",
+      name: "vendorDetails",
+      template: "vendorDetails",
+      workflow: "coreWorkflow"
     }
   ]
 });

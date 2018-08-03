@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {  registerComponent, composeWithTracker  } from "@reactioncommerce/reaction-components";
 import PropTypes from "prop-types";
 import { Shops } from "/lib/collections";
+import { Reaction } from "/client/api";
 
 class ListVendors extends Component {
   render() {
@@ -15,13 +16,22 @@ class ListVendors extends Component {
                   <br/>
                   <span className="card-img-top fa card-title smiley">&#xf118;</span>
                   <h4 className="card-title">{shops.name}</h4>
-                  <button className="btn text-white brown-btn">Visit Shop</button>
+                  <button
+                    className="btn text-white brown-btn"
+                  >
+                    Visit Shop
+                  </button>
                 </div>
                 <div className="back">
                   <br/>
                   <span className="card-img-top fa card-title smiley">&#xf118;</span>
                   <h4 className="card-title">{shops.name}</h4>
-                  <button className="btn text-white brown-btn">Visit Shop</button>
+                  <button
+                    onClick={() => Reaction.Router.go(`/vendors/${shops.name}`)}
+                    className="btn text-white brown-btn"
+                  >
+                    Visit Shop
+                  </button>
                 </div>
               </div>
             </div>))}

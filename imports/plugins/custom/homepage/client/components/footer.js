@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { registerComponent } from "/imports/plugins/core/components/lib";
 
-
 class Footer extends Component {
-  /* eslint-disable */
-  componentWillMount() {
+  componentDidMount() {
     const scriptNode = document.getElementById("twitter-wjs");
     if (scriptNode) {
       scriptNode.parentNode.removeChild(scriptNode);
@@ -40,26 +38,26 @@ class Footer extends Component {
                   <img className="paystack" src="/resources/images/paystack.png" />
                 </div>
                 <div className="col-lg-3 col-md-3 footer-links">
-              <h4>Useful Links</h4>
-              <ul className="a__link">
-                <li>
-                  <i className="ion-ios-arrow-right"></i>
-                  <a href="/vendors">Vendors on AfriStore</a>
-                </li>
-                <li>
-                  <i className="ion-ios-arrow-right"></i>
-                  <a href="#">T & C Policy</a>
-                </li>
-                <li>
-                  <i className="ion-ios-arrow-right"></i>
-                  <a href="#about-me">Shipping & Returns</a>
-                </li>
-                <li>
-                  <i className="ion-ios-arrow-right"></i>
-                  <a href="#portfolio">About</a>
-                </li>
-              </ul>
-            </div>
+                  <h4>Useful Links</h4>
+                  <ul className="a__link">
+                    <li>
+                      <i className="ion-ios-arrow-right" />
+                      <a href="/vendors">Vendors on AfriStore</a>
+                    </li>
+                    <li>
+                      <i className="ion-ios-arrow-right" />
+                      <a href="#">T & C Policy</a>
+                    </li>
+                    <li>
+                      <i className="ion-ios-arrow-right" />
+                      <a href="#about-me">Shipping & Returns</a>
+                    </li>
+                    <li>
+                      <i className="ion-ios-arrow-right" />
+                      <a href="#portfolio">About</a>
+                    </li>
+                  </ul>
+                </div>
 
                 <div className="col-lg-3 col-md-3 footer-contact">
                   <h4>Contact Us</h4>
@@ -88,7 +86,6 @@ class Footer extends Component {
         </footer>
         <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8" />
       </div>
-      /* eslint-enable */
     );
   }
 }
