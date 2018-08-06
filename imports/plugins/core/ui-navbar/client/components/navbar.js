@@ -169,7 +169,7 @@ class NavBar extends Component {
 
   renderStaticPages() {
     return (
-      <div className="menu d-flex">
+      <div className="menu d-flex static-page-navitem">
         <div className="view-static-pages">
           <Components.StaticPages />
         </div>
