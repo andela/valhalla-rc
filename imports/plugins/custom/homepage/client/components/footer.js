@@ -69,8 +69,8 @@ class Footer extends Component {
 
                 <div className="col-lg-3 col-md-3 footer-contact">
                   <h4>We're Social</h4>
-                  <a href="https://www.facebook.com/TheAfricanShop2013" target="_blank" className="zocial facebook"><i className="fa fa-facebook"></i> Like on Facebook &nbsp; &nbsp;</a><br /><br />
-                  <a href="#" target="_blank" className="zocial googleplus"><i className="fa fa-google-plus"></i> @afri_store &nbsp;</a><br /><br />
+                  {/* <a href="https://www.facebook.com/TheAfricanShop2013" target="_blank" className="zocial facebook"><i className="fa fa-facebook"></i> Like on Facebook &nbsp; &nbsp;</a><br /><br /> */}
+                  {/* <a href="#" target="_blank" className="zocial googleplus"><i className="fa fa-google-plus"></i> @afri_store &nbsp;</a><br /><br /> */}
                   <a href="https://twitter.com/PapstoreSA" target="_blank" className="zocial twitter"><i className="fa fa-twitter"></i>   @afri_store &nbsp;</a>
                 </div>
 

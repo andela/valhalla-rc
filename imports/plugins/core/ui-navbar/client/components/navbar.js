@@ -141,7 +141,7 @@ class NavBar extends Component {
 
   renderTagNav() {
     return (
-      <div className="menu" onMouseEnter={this.handleDropdown}>
+      <div onMouseEnter={this.handleDropdown} className="view-product-categories">
         {/* <Components.TagNav
           isVisible={this.state.navBarVisible}
           closeNavbar={this.handleCloseNavbar}
@@ -167,12 +167,29 @@ class NavBar extends Component {
     );
   }
 
+  renderStaticPages() {
+    return (
+      <div className="menu d-flex">
+        <div className="view-static-pages">
+          <Components.StaticPages />
+        </div>
+        { Meteor.user().name === "Admin" ?
+          <a className="manage-pages" onClick={() => this.goToManagePages()}>Manage Pages</a> : null }
+        {Reaction.hasPermission("owner", Meteor.userId(), Reaction.getShopId()) && Meteor.user().username !== "admin" && this.renderVendorTour()}
+      </div>
+    );
+  }
+
+  goToManagePages() {
+    return Reaction.Router.go("/dashboard/static");
+  }
+
   render() {
     return (
       <div className="rui navbar">
         {this.renderHamburgerButton()}
-        {Reaction.hasPermission("owner", Meteor.userId(), Reaction.getShopId()) && Meteor.user().username !== "admin" && this.renderVendorTour()}
         {this.renderTagNav()}
+        {this.renderStaticPages()}
         {this.renderBrand()}
         {this.renderSearchButton()}
         {this.renderVendor()}

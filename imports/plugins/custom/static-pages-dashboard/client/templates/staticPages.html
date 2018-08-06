@@ -1,0 +1,88 @@
+<template name="managePageForm">
+    <div class="page-panel panel panel-info">
+    <div class="panel-body">
+    {{#if staticPages.count}}
+    <div class="table-responsive">
+        <table class="table-hover table-striped" style="width: 100%;">
+            <tbody>
+                {{#each page in staticPages}}
+                <tr id={{page._id}} class="page-info">
+                <td class="text-capitalize page-name">{{page.pageName}}</td>
+                <td>
+                    <div class='btn-group pull-right' style="margin-top: 5px;">
+                        <a href="/pages/{{page.pageAddress}}" type="button" class="btn previewPage action-btn" 
+                        style="margin-right: 10px">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <button type="button" 
+                            class="btn btn-warning editPage action-btn" style="margin-right: 10px"
+                            data-toggle="tooltip" data-placement="bottom" title="Edit page">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger deletePage action-btn"
+                        data-toggle="tooltip" data-placement="bottom" title="Delete page">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{else}}
+    <div class='page-alert page-alert-info justify-content-center'>
+        <h4>You have no page to manage. Add one!</h4>
+    </div>
+    {{/if}}
+    </div>
+</div>
+</template>
+   
+<template name="addPageForm" class="addPageForm">
+    <form class="static-page">
+        <span class="hide cancelEdit" id="cancelEdit">&times;</span>
+        <div class="form-group label-info transparent">
+        <label for="sp-name">Page Title:</label>
+        <input type="text" name="name" id="sp-name" placeholder="Enter page title.. (e.g. Terms and Conditions)" class="form-control" required="required">
+        </div>
+        <div class="form-group label-info transparent">
+        <label for="sp-url">Page URL Address:</label>
+        <input type="text" name="url" id="sp-url" placeholder="Enter page address.. (e.g. t&c)" class="form-control" required="required">
+        <input class="edit-page-data" type='hidden'>
+        </div>
+        <div class="form-group label-info transparent">
+        <label for="sp-content">Page Content:</label>
+        <textarea name="content" id="sp-content" class="form-control spform"></textarea>
+        </div>
+        <div class="checkbox form-group label-info transparent">
+            <label>
+                <input type="checkbox" name="showOnNavbar" id="sp-show">Show page on navbar?
+            </label>
+        </div>
+        <div class="form-group transparent">
+        <button type="submit" class="form-group save-static-page btn btn-color"><i class="fa fa-paper-plane"></i>&nbsp;Create Page</button>
+        </div>
+    </form>
+</template>
+
+<template name="staticPages">
+    <div class='container staticPageDiv'>
+        <div class='row'>
+            <div class="createpage">
+                <div class='col-lg-5 col-xs-12' id="managePage">
+                    <div>
+                    <h1 class="btn-center">Manage Pages</h1>
+                    </div>
+                    {{> managePageForm}}
+                </div>
+                <div class='col-lg-7 col-xs-12' id="createPage">
+                    <div>
+                        <h1 class="btn-center add-page">Create A Page</h1>
+                    </div> 
+                    {{> addPageForm}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

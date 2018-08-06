@@ -21,7 +21,7 @@ const vendorTourSteps = [
   },
   {
     element: ".languages",
-    intro: "Select your preffered language here",
+    intro: "Select your prefered language here",
     position: "bottom"
   },
   {
@@ -51,6 +51,20 @@ const vendorTourSteps = [
       <hr />
       <p>To toggle between edit mode and shop mode click on the switch</p>`,
     position: "top-right"
+  },
+  {
+    element: ".view-product-categories",
+    intro: `<h4>Product categories</h4>
+      <hr />
+      <p>To filter products by their category, click this button</p>`,
+    position: "bottom"
+  },
+  {
+    element: ".view-static-pages",
+    intro: `<h4>Static pages</h4>
+      <hr />
+      <p>You can view all static pages available by clicking this button</p>`,
+    position: "bottom"
   },
   {
     element: "#take-tour",

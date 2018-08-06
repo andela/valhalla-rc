@@ -1,5 +1,4 @@
 import { Reaction } from "/server/api";
-
 Reaction.registerPackage({
   label: "Accounts",
   name: "reaction-accounts",
