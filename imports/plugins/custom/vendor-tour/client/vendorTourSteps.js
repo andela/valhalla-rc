@@ -6,12 +6,6 @@ const vendorTourSteps = [
     position: "top"
   },
   {
-    element: ".right",
-    intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
-            Add Products Here`,
-    position: "bottom-right"
-  },
-  {
     element: ".search",
     intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
             Search for items around the store here`,
@@ -51,12 +45,6 @@ const vendorTourSteps = [
     element: ".toolbar-vertical",
     intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
            <p>This is your Dashboard area where you can view orders, analytics, etc</p>`
-  },
-  {
-    element: ".left",
-    intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
-            <p>To toggle between edit mode and shop mode click on the switch</p>`,
-    position: "top-right"
   },
   {
     element: ".view-product-categories",

@@ -9,24 +9,26 @@ const status = [
   SHOP_WORKFLOW_STATUS_DISABLED
 ];
 
-export function marketplaceUpdateShopWorkflow(shopId, workflowStatus) {
+export function marketplaceUpdateShopWorkflow(shopId, workflowStatus, shopName) {
   check(shopId, String);
   check(workflowStatus, String);
+  check(shopName, String);
 
   if (shopId === Reaction.getPrimaryShopId()) {
     throw new Meteor.Error("access-denied", "Cannot change shop status");
   }
 
-  if (!Reaction.hasPermission("admin", this.userId, Reaction.getPrimaryShopId())) {
-    throw new Meteor.Error("access-denied", "Cannot change shop status");
-  }
+  // if (!Reaction.hasPermission("admin", this.userId, Reaction.getPrimaryShopId())) {
+  //   throw new Meteor.Error("access-denied", "Cannot change shop status");
+  // }
 
   if (status.includes(workflowStatus)) {
     return Shops.update({
       _id: shopId
     }, {
       $set: {
-        "workflow.status": workflowStatus
+        "workflow.status": workflowStatus,
+        "name": shopName
       }
     }, function (error) {
       if (error) {

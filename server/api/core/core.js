@@ -67,8 +67,8 @@ export default {
     const registeredPackage = this.Packages[packageInfo.name] = packageInfo;
     return registeredPackage;
   },
-  defaultCustomerRoles: ["guest", "account/profile", "product", "tag", "index", "cart/checkout", "cart/completed", "VendorPage"],
-  defaultVisitorRoles: ["anonymous", "guest", "product", "tag", "index", "cart/checkout", "cart/completed", "VendorPage"],
+  defaultCustomerRoles: ["guest", "account/profile", "product", "tag", "index", "cart/checkout", "cart/completed", "VendorPage", "signupForm"],
+  defaultVisitorRoles: ["anonymous", "guest", "product", "tag", "index", "cart/checkout", "cart/completed", "VendorPage", "signupForm"],
   createGroups,
   /**
    * canInviteToGroup

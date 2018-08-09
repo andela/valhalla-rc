@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
+import { Router } from "/client/api";
 import { Components, registerComponent } from "@reactioncommerce/reaction-components";
 
 class SignIn extends Component {
@@ -167,7 +168,7 @@ class SignIn extends Component {
             <a
               href="#"
               tabIndex="5"
-              onClick={this.props.onSignUpClick}
+              onClick={() => Router.go("/signup")}
             >
               <Components.Translation defaultValue="Register" i18nKey="accountsUI.signUp" />
             </a>

@@ -186,7 +186,7 @@ class Button extends Component {
     // Button with tooltip gets some special treatment
     if (tooltip) {
       return React.createElement(tagName, buttonProps,
-        <span className="rui btn-tooltip" style={{ display: "inline-flex", ...containerStyle }}>
+        <span className="rui btn-tooltip" id="plus-icon" style={{ display: "inline-flex", ...containerStyle }}>
           <Components.Tooltip attachment={tooltipAttachment} tooltipContent={this.renderTooltipContent()}>
             {buttonChildren}
           </Components.Tooltip>
