@@ -167,15 +167,22 @@ class NavBar extends Component {
     );
   }
 
+  renderTourButtons() {
+    return (
+      <div className="d-flex">
+        {Reaction.hasPermission("owner", Meteor.userId(), Reaction.getShopId()) && Meteor.user().username !== "admin" && this.renderVendorTour()}
+      </div>
+    );
+  }
+
   renderStaticPages() {
     return (
       <div className="menu d-flex static-page-navitem">
         <div className="view-static-pages">
           <Components.StaticPages />
         </div>
-        { Meteor.user().name === "Admin" ?
-          <a className="manage-pages" onClick={() => this.goToManagePages()}>Manage Pages</a> : null }
-        {Reaction.hasPermission("owner", Meteor.userId(), Reaction.getShopId()) && Meteor.user().username !== "admin" && this.renderVendorTour()}
+        { Meteor.user().name !== "Admin" ? null
+          : <a className="manage-pages" onClick={() => this.goToManagePages()}>Manage Pages</a> }
       </div>
     );
   }
@@ -189,6 +196,7 @@ class NavBar extends Component {
       <div className="rui navbar">
         {this.renderHamburgerButton()}
         {this.renderTagNav()}
+        {this.renderTourButtons()}
         {this.renderStaticPages()}
         {this.renderBrand()}
         {this.renderSearchButton()}
