@@ -4,6 +4,7 @@ import { Components } from "@reactioncommerce/reaction-components";
 import { Meteor } from "meteor/meteor";
 import { Reaction } from "/client/api";
 import startTour from "/imports/plugins/custom/vendor-tour/client/vendorTour";
+import customerTour from "/imports/plugins/custom/customer-tour/client/customerTour";
 // TODO: Delete this, and do it the react way - Mike M.
 async function openSearchModalLegacy(props) {
   if (Meteor.isClient) {
@@ -44,6 +45,10 @@ class NavBar extends Component {
   handleStartTour = () => {
     Reaction.Router.go("/");
     startTour();
+  }
+  handleStartCustomerTour = () => {
+    Reaction.Router.go("/");
+    customerTour();
   }
   handleOpenSearchModal = () => {
     openSearchModalLegacy(this.props);
@@ -133,7 +138,7 @@ class NavBar extends Component {
 
   renderVendor() {
     return (
-      <div className="">
+      <div className="vendors">
         <a href="/vendors">Vendors</a>
       </div>
     );
@@ -158,11 +163,15 @@ class NavBar extends Component {
   renderVendorTour() {
     return (
       <div id="take-tour">
-        <Components.FlatButton
-          label="TAKE TOUR"
-          kind="flat"
-          onClick={this.handleStartTour}
-        />
+        <span onClick={this.handleStartTour} className="pointer">Take A Tour</span>
+      </div>
+    );
+  }
+
+  renderCustomerTour() {
+    return (
+      <div id="take-customer-tour">
+        <span onClick={this.handleStartCustomerTour} className="pointer">Take A Tour</span>
       </div>
     );
   }
@@ -171,6 +180,7 @@ class NavBar extends Component {
     return (
       <div className="d-flex">
         {Reaction.hasPermission("owner", Meteor.userId(), Reaction.getShopId()) && Meteor.user().username !== "admin" && this.renderVendorTour()}
+        {!(Reaction.hasPermission("owner", Meteor.userId(), Reaction.getShopId())) && Meteor.user().username !== "admin" && this.renderCustomerTour()}
       </div>
     );
   }

@@ -125,6 +125,9 @@ div#brand {
 .subtitle {
   margin: 0 0 1em 0;
 }
+.info-inner{
+  font-size: 10px;
+}
 .fancy {
   line-height: 0.5;
   text-align: center;
@@ -268,8 +271,11 @@ div#brand {
 
 .hide {
   display: none;
+  font-size: 16px !important;
+  font-style: oblique;
+  word-spacing: 4px;
+  
 }
-
 .sold-out {
   position: absolute;
   width: 100%;
@@ -637,8 +643,10 @@ a.zocial {
 
 // intro js styles goes here
 .introjs-tooltip {
-  background-color: black;
-  color: #fff;
+  font-family: monospace;
+  background: #d7cdca;
+  color: #3a2d2d;
+  padding: 40px;
 }
 
 .introjs-button,
@@ -647,24 +655,31 @@ a.zocial {
   outline: none;
   background-image: none;
   background-color: transparent;
-  color: #fff;
+  color: #3a2d2d;
   border: 1px solid transparent;
   border-radius: 50px;
   box-shadow: none;
-  border-shadow: none;
+  font-size: 14px;
   text-shadow: none;
 }
+.introjs-bullets ul li a{
+  background: #b3acac;
+}
+.introjs-bullets ul li a.active{
+  background:#e40c0c; 
+}
+
 
 .introjs-button:hover, .introjs-button:focus, .introjs-button:active {
-  border: 1px solid #fff
+  border: 1px solid #3a2d2d
 }
 .introjs-disabled, .introjs-disabled:focus, .introjs-disabled:hover {
-  color: #ccc;
+  color: #3a2d2d;
   border: 1px solid transparent;
 }
 
 .introjs-arrow {
-  border: 10px solid #fff;
+  border: 10px solid #3a2d2d;
 }
 .introjs-arrow.top, .introjs-arrow.top-middle, .introjs-arrow.top-right {
   border-color: transparent transparent rgba(000, 0, 0, 0.5);
@@ -693,4 +708,16 @@ a.zocial {
 }
 span.radio-btn {
   margin-left: 10px;
+}
+.introjs-progressbar {
+  background-color: #3a2d2d;
+}
+.tour-logo {
+  display: block;
+  width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.pointer{
+  cursor: pointer;
 }

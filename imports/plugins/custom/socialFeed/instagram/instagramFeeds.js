@@ -4,7 +4,7 @@ import { InstagramPlugin } from "./instagramScript";
 
 const InstagramFeeds = () => {
   return (
-    <div>
+    <div className="instagram">
       <a href="https://www.instagram.com/fashionbombafrica">
         <img className="instagramImage" src="/resources/images/instagram.png" alt="instagramImage" />
       </a>

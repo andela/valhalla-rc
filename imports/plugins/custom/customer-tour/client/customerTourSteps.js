@@ -1,14 +1,26 @@
-const vendorTourSteps = [
+const customerTourSteps = [
   {
     element: ".nav-reaction",
-    intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
-            Welcome to AfriStore, we will be taking you on a brief tour of the application and how to get started`,
+    intro: ` <img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr> Welcome to AfriStore, we will be taking you on a brief tour of the application and how to get started.
+              <br> Click next to continue `,
     position: "top"
   },
   {
-    element: ".right",
+    element: ".top-products",
+    intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr> 
+            Here are the top products`,
+    position: "bottom"
+  },
+  {
+    element: "#category",
     intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
-            Add Products Here`,
+            Here are the top product categories`,
+    position: "top"
+  },
+  {
+    element: ".instagram",
+    intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
+            Here is our instagram feeds <br/> You can click on the instagram icon to see more of our feeds`,
     position: "bottom-right"
   },
   {
@@ -18,10 +30,10 @@ const vendorTourSteps = [
     position: "bottom"
   },
   {
-    element: ".notification",
+    element: ".vendors",
     intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
-            Here you can read notifications pertaining to the store`,
-    position: "left"
+            Click to see the list of our vendors`,
+    position: "bottom"
   },
   {
     element: ".languages",
@@ -32,13 +44,13 @@ const vendorTourSteps = [
   {
     element: ".currencies",
     intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
-            Shows the currency of your transaction`,
+            Select your prefered currency for your transaction`,
     position: "bottom"
   },
   {
     element: ".accounts",
     intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
-            You can sign in and sign out from here and also update your profile`,
+            You can sign out from here and also view your profile`,
     position: "bottom"
   },
   {
@@ -48,20 +60,9 @@ const vendorTourSteps = [
     position: "bottom-left"
   },
   {
-    element: ".toolbar-vertical",
-    intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
-           <p>This is your Dashboard area where you can view orders, analytics, etc</p>`
-  },
-  {
-    element: ".left",
-    intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
-            <p>To toggle between edit mode and shop mode click on the switch</p>`,
-    position: "top-right"
-  },
-  {
     element: ".view-product-categories",
     intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
-            <p>To filter products by their category, click this button</p>`,
+             <p>view products by category</p>`,
     position: "bottom"
   },
   {
@@ -71,11 +72,11 @@ const vendorTourSteps = [
     position: "bottom"
   },
   {
-    element: "#take-tour",
+    element: "#take-customer-tour",
     intro: `<img src="/resources/images/applogo.jpg" width="130" height="55px" class="tour-logo"> <hr>
-            You can take the tour again by clicking here. To find out more about setting up a store click <a href='https://docs.reactioncommerce.com/docs/next/dashboard'>Here</a>`,
+            You can take the tour again by clicking here.`,
     position: "bottom"
   }
 ];
-export default vendorTourSteps;
+export default customerTourSteps;
 
